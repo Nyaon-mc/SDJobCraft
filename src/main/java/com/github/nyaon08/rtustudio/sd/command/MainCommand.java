@@ -9,7 +9,7 @@ import java.util.List;
 public class MainCommand extends RSCommand<SDJobCraft> {
 
     public MainCommand(SDJobCraft plugin) {
-        super(plugin, "playtime");
+        super(plugin, "job");
     }
 
     @Override

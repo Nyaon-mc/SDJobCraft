@@ -1,8 +1,0 @@
-format:
-  hour: "<white>[hour]시 </white>"
-  minute: "<white>[minute]분 </white>"
-  second: "<white>[second]초</white>"
-
-playtime: "<green>[player]님의 접속 시간: <white>[time]</white>"
-reset: "<green>[player]님의 접속 시간을 초기화 하였습니다.</green>"
-resetall: "<green>전체 접속 시간을 초기화 하였습니다.</green>"
