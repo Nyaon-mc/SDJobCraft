@@ -1,2 +1,8 @@
 job:
   name: "직업"
+
+check:
+  name: "확인"
+
+set:
+  name: "추가"

@@ -23,7 +23,9 @@ public class JobManager {
         Storage storage = plugin.getStorage();
         storage.get("jobs", JSON.of("uuid", uuid.toString())).thenAccept(result -> {
             if (result.isEmpty() || result.getFirst().isJsonNull()) {
-                storage.add("jobs", JSON.of("uuid", uuid.toString()));
+                storage.add("jobs", JSON.of("uuid", uuid.toString())
+                        .append("job", String.valueOf(Job.Type.NONE))
+                        .append("level", 0));
             }
         });
     }
@@ -31,7 +33,7 @@ public class JobManager {
     public void setJob(UUID uuid, Job job) {
         Storage storage = plugin.getStorage();
         storage.set("jobs", JSON.of("uuid", uuid.toString()),
-                JSON.of("job", job.job()).append("level", job.level()));
+                JSON.of("job", String.valueOf(job.job())).append("level", job.level()));
         jobs.put(uuid, job);
     }
 
@@ -39,9 +41,10 @@ public class JobManager {
         if (jobs.containsKey(uuid)) return jobs.get(uuid);
         Storage storage = plugin.getStorage();
         return storage.get("jobs", JSON.of("uuid", uuid.toString())).thenApply(result -> {
+            if (result.isEmpty() || result.getFirst().isJsonNull()) return new Job(Job.Type.NONE, 0);
             String currentJob = result.getFirst().get("job").getAsString();
             int currentLevel = result.getFirst().get("level").getAsInt();
-            Job job = new Job(currentJob, currentLevel);
+            Job job = new Job(Job.Type.valueOf(currentJob), currentLevel);
             jobs.put(uuid, job);
             return job;
         }).join();

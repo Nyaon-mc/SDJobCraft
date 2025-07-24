@@ -1,0 +1,19 @@
+error:
+  invalid-job: "<red>존재하지 않은 직업입니다</red>"
+
+format:
+  job: "직업"
+  jobs:
+    none: "백수"
+    farmer: "농부"
+    fisher: "어부"
+    miner: "광부"
+    jeweler: "세공사"
+
+success:
+  check:
+    self: "<white>현재 직업은 <green>[job]</green> 입니다</white>"
+    other: "<white>[player] 님의 현재 직업은 <green>[job]</green> 입니다</white>"
+  set:
+    sender: "<white>[player] 님의 직업을 <green>[job]</green>로 설정했습니다.</white>"
+    receiver: "<white>관리자에 의해 직업이 <green>[job]</green>로 설정되었습니다.</white>"
