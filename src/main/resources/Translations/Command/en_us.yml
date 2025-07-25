@@ -3,3 +3,9 @@ job:
 
 check:
   name: "check"
+
+set:
+  name: "set"
+
+reset:
+  name: "reset"

@@ -6,3 +6,6 @@ check:
 
 set:
   name: "추가"
+
+reset:
+  name: "초기화"

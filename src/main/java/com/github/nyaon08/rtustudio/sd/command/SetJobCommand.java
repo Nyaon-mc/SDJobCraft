@@ -42,7 +42,7 @@ public class SetJobCommand extends RSCommand<SDJobCraft> {
             return true;
         }
 
-        Job job = new Job(type, 0);
+        Job job = new Job(type, 0, 0, 0);
         jobManager.setJob(target.getUniqueId(), job);
 
         String replaceJobName = message().get(player(), "format.jobs." + type.toString().toLowerCase());

@@ -1,0 +1,19 @@
+error:
+  invalid-job: "<red>The specified job does not exist.</red>"
+
+format:
+  job: "Job"
+  jobs:
+    none: "Unemployed"
+    farmer: "Farmer"
+    fisher: "Fisher"
+    miner: "Miner"
+    jeweler: "Jeweler"
+
+success:
+  check:
+    self: "<white>Your current job is <green>[job]</green>.</white>"
+    other: "<white>[player]'s current job is <green>[job]</green>.</white>"
+  set:
+    sender: "<white>Set [player]'s job to <green>[job]</green>.</white>"
+    receiver: "<white>Your job has been set to <green>[job]</green> by an administrator.</white>"

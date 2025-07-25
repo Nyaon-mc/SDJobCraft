@@ -1,0 +1,65 @@
+level_up_ep_cost:
+  farmer:
+    0:
+      chance: 10
+      ep_cost: 1
+    10:
+      chance: 10
+      ep_cost: 2
+    20:
+      chance: 10
+      ep_cost: 3
+    30:
+      chance: 10
+      ep_cost: 4
+    40:
+      chance: 10
+      ep_cost: 5
+  fisher:
+    0:
+      chance: 10
+      ep_cost: 1
+    10:
+      chance: 10
+      ep_cost: 2
+    20:
+      chance: 10
+      ep_cost: 3
+    30:
+      chance: 10
+      ep_cost: 4
+    40:
+      chance: 10
+      ep_cost: 5
+  miner:
+    0:
+      chance: 10
+      ep_cost: 1
+    10:
+      chance: 10
+      ep_cost: 2
+    20:
+      chance: 10
+      ep_cost: 3
+    30:
+      chance: 10
+      ep_cost: 4
+    40:
+      chance: 10
+      ep_cost: 5
+  jeweler:
+    0:
+      chance: 10
+      ep_cost: 1
+    10:
+      chance: 10
+      ep_cost: 2
+    20:
+      chance: 10
+      ep_cost: 3
+    30:
+      chance: 10
+      ep_cost: 4
+    40:
+      chance: 10
+      ep_cost: 5

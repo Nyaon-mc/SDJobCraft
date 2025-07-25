@@ -1,0 +1,7 @@
+menu.pagination:
+  up:
+    available: minecraft:arrow
+    unavailable: minecraft:red_wool
+  down:
+    available: minecraft:arrow
+    unavailable: minecraft:red_wool

@@ -1,5 +1,6 @@
 error:
   invalid-job: "<red>존재하지 않은 직업입니다</red>"
+  planned-job: "<red>추가 예정중의 직업입니다</red>"
 
 format:
   job: "직업"
@@ -11,9 +12,30 @@ format:
     jeweler: "세공사"
 
 success:
+  select-job: "<white><green>[job]</green>을(를) 선택했습니다.</white>"
   check:
-    self: "<white>현재 직업은 <green>[job]</green> 입니다</white>"
-    other: "<white>[player] 님의 현재 직업은 <green>[job]</green> 입니다</white>"
+    self: "<white>현재 직업은 <green>[job]</green>입니다</white>"
+    other: "<white>[player]님의 현재 직업은 <green>[job]</green>입니다</white>"
   set:
-    sender: "<white>[player] 님의 직업을 <green>[job]</green>로 설정했습니다.</white>"
+    sender: "<white>[player]님의 직업을 <green>[job]</green>로 설정했습니다.</white>"
     receiver: "<white>관리자에 의해 직업이 <green>[job]</green>로 설정되었습니다.</white>"
+  reset:
+    sender: "<white>[player]님의 직업을 <green>백수</green>로 설정했습니다.</white>"
+    receiver: "<white>관리자에 의해 직업이 <green>백수</green>로 설정되었습니다.</white>"
+
+icon:
+  select:
+    planned: "<!italic><white>추가 예정</white>"
+    farmer: "<!italic><white>농부</white>"
+    fisher: "<!italic><white>어부</white>"
+    miner: "<!italic><white>광부</white>"
+    jeweler: "<!italic><white>세공사</white>"
+
+  menu:
+    pagination:
+      up:
+        available: "<white>이전 페이지</white>"
+        unavailable: "<gray>처음 페이지</gray>"
+      down:
+        available: "<white>다음 페이지</white>"
+        unavailable: "<gray>마지막 페이지</gray>"

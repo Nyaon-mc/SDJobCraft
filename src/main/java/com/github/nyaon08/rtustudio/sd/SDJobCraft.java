@@ -1,7 +1,9 @@
 package com.github.nyaon08.rtustudio.sd;
 
 import com.github.nyaon08.rtustudio.sd.command.MainCommand;
+import com.github.nyaon08.rtustudio.sd.configuration.IconConfig;
 import com.github.nyaon08.rtustudio.sd.configuration.JobConfig;
+import com.github.nyaon08.rtustudio.sd.configuration.LevelingConfig;
 import com.github.nyaon08.rtustudio.sd.dependency.PlaceholderAPI;
 import com.github.nyaon08.rtustudio.sd.listener.PlayerConnectionListener;
 import com.github.nyaon08.rtustudio.sd.manager.JobManager;
@@ -19,7 +21,13 @@ public class SDJobCraft extends RSPlugin {
     private static SDJobCraft instance;
 
     @Getter
+    private IconConfig iconConfig;
+
+    @Getter
     private JobConfig jobConfig;
+
+    @Getter
+    private LevelingConfig levelingConfig;
 
     @Getter
     private JobManager jobManager;
@@ -44,15 +52,14 @@ public class SDJobCraft extends RSPlugin {
         RegisteredServiceProvider<Economy> provider = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
         if (provider != null) {
             economy = provider.getProvider();
-        } else {
-            getLogger().warning("Vault is not enabled. Economy features will not work.");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
         }
 
         payment = new VaultPayment(this);
 
+        iconConfig = new IconConfig(this);
         jobConfig = new JobConfig(this);
+        levelingConfig = new LevelingConfig(this);
+
         jobManager = new JobManager(this);
 
         registerCommand(new MainCommand(this), true);

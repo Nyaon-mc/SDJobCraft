@@ -32,6 +32,7 @@ repositories {
     maven { url = "https://repo.codemc.io/repository/rtuserver/" } // RSFramework
 
     maven { url = "https://repo.extendedclip.com/content/repositories/placeholderapi/" } // PlaceholderAPI
+    maven{ url = "https://repo.momirealms.net/releases/" } // CustomFishing
 
     maven { url = "https://mvnrepository.com/artifact/org.projectlombok/lombok" } // Lombok
 }
@@ -58,6 +59,7 @@ dependencies {
     // ThirdParty Plugins
     compileOnly fileTree(dir: "libs", include: ["*.jar"])
     compileOnly "me.clip:placeholderapi:2.11.6"
+    compileOnly "net.momirealms:custom-fishing:2.3.7"
     compileOnly ("com.github.MilkBowl:VaultAPI:1.7") {
         exclude group: 'org.bukkit', module: 'bukkit'
     }
