@@ -9,12 +9,13 @@ import com.github.nyaon08.rtustudio.sd.listener.FarmerSkillListener;
 import com.github.nyaon08.rtustudio.sd.listener.MinerSkillListener;
 import com.github.nyaon08.rtustudio.sd.listener.PlayerConnectionListener;
 import com.github.nyaon08.rtustudio.sd.manager.JobManager;
+import com.github.nyaon08.rtustudio.sd.manager.LevelUpManager;
 import com.github.nyaon08.rtustudio.sd.payment.Payment;
 import com.github.nyaon08.rtustudio.sd.payment.VaultPayment;
 import kr.rtuserver.framework.bukkit.api.RSPlugin;
 import lombok.Getter;
+import net.luckperms.api.LuckPerms;
 import net.milkbowl.vault.economy.Economy;
-import net.momirealms.customfishing.api.BukkitCustomFishingPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
@@ -36,7 +37,13 @@ public class SDJobCraft extends RSPlugin {
     private JobManager jobManager;
 
     @Getter
+    private LevelUpManager levelUpManager;
+
+    @Getter
     private Economy economy;
+
+    @Getter
+    private LuckPerms luckPerms;
 
     @Getter
     private Payment payment;
@@ -52,9 +59,14 @@ public class SDJobCraft extends RSPlugin {
     public void enable() {
         getConfigurations().getStorage().init("jobs");
 
-        RegisteredServiceProvider<Economy> provider = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
-        if (provider != null) {
-            economy = provider.getProvider();
+        RegisteredServiceProvider<Economy> economyProvider = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
+        if (economyProvider != null) {
+            economy = economyProvider.getProvider();
+        }
+
+        RegisteredServiceProvider<LuckPerms> permProvider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
+        if (permProvider != null) {
+            luckPerms = permProvider.getProvider();
         }
 
         payment = new VaultPayment(this);
@@ -64,6 +76,7 @@ public class SDJobCraft extends RSPlugin {
         levelingConfig = new LevelingConfig(this);
 
         jobManager = new JobManager(this);
+        levelUpManager = new LevelUpManager(this);
 
         registerCommand(new MainCommand(this), true);
         registerEvent(new PlayerConnectionListener(this));
