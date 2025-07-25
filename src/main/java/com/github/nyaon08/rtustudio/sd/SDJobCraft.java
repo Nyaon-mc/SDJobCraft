@@ -5,6 +5,8 @@ import com.github.nyaon08.rtustudio.sd.configuration.IconConfig;
 import com.github.nyaon08.rtustudio.sd.configuration.JobConfig;
 import com.github.nyaon08.rtustudio.sd.configuration.LevelingConfig;
 import com.github.nyaon08.rtustudio.sd.dependency.PlaceholderAPI;
+import com.github.nyaon08.rtustudio.sd.listener.FarmerSkillListener;
+import com.github.nyaon08.rtustudio.sd.listener.MinerSkillListener;
 import com.github.nyaon08.rtustudio.sd.listener.PlayerConnectionListener;
 import com.github.nyaon08.rtustudio.sd.manager.JobManager;
 import com.github.nyaon08.rtustudio.sd.payment.Payment;
@@ -12,6 +14,7 @@ import com.github.nyaon08.rtustudio.sd.payment.VaultPayment;
 import kr.rtuserver.framework.bukkit.api.RSPlugin;
 import lombok.Getter;
 import net.milkbowl.vault.economy.Economy;
+import net.momirealms.customfishing.api.BukkitCustomFishingPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
@@ -64,6 +67,8 @@ public class SDJobCraft extends RSPlugin {
 
         registerCommand(new MainCommand(this), true);
         registerEvent(new PlayerConnectionListener(this));
+        registerEvent(new FarmerSkillListener(this));
+        registerEvent(new MinerSkillListener(this));
 
         if (getFramework().isEnabledDependency("PlaceholderAPI")) {
             placeholder = new PlaceholderAPI(this);
