@@ -3,7 +3,6 @@ package com.github.nyaon08.rtustudio.sd.listener;
 import com.github.nyaon08.rtustudio.sd.SDJobCraft;
 import com.github.nyaon08.rtustudio.sd.configuration.JobConfig;
 import com.github.nyaon08.rtustudio.sd.manager.JobManager;
-import kr.rtuserver.framework.bukkit.api.core.scheduler.Scheduler;
 import kr.rtuserver.framework.bukkit.api.listener.RSListener;
 import kr.rtuserver.framework.bukkit.api.registry.CustomItems;
 import org.bukkit.Bukkit;
